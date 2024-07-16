@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: vladislavs_kraslavskis
+      changes:
+        - createTable:
+            tableName: reservation
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: room
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: start_date
+                  type: DATE
+                  constraints:
+                    nullable: true
+              - column:
+                  name: end_date
+                  type: DATE
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 2
+      author: vladislavs_kraslavskis
+      changes:
+        - createTable:
+            tableName: room
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: room_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
